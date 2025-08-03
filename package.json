@@ -10,11 +10,11 @@
     "build"
   ],
   "scripts": {
-    "build": "tsc && node -e \"require('fs').chmodSync('build/index.js', '755')\"",
-    "prepare": "npm run build",
-    "watch": "tsc --watch",
-    "inspector": "npx @modelcontextprotocol/inspector build/index.js",
-    "prepublishOnly": "npm run build"
+    "build": "bun run tsc && bun run -e \"require('fs').chmodSync('build/index.js', '755')\"",
+    "prepare": "bun run build",
+    "watch": "bun run tsc --watch",
+    "inspector": "bunx @modelcontextprotocol/inspector build/index.js",
+    "prepublishOnly": "bun run build"
   },
   "keywords": [
     "tavily-mcp",
@@ -42,13 +42,13 @@
   "license": "MIT",
   "dependencies": {
     "@modelcontextprotocol/sdk": "0.6.0",
-    "dotenv": "^16.4.5",
-    "axios": "^1.6.7",
+    "dotenv": "^16.6.1",
+    "axios": "^1.11.0",
     "yargs": "^17.7.2"
   },
   "devDependencies": {
-    "@types/node": "^20.11.24",
-    "@types/yargs": "^17.0.32",
-    "typescript": "^5.3.3"
+    "@types/node": "^20.19.9",
+    "@types/yargs": "^17.0.33",
+    "typescript": "^5.9.2"
   }
 }
